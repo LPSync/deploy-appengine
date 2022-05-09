@@ -17,10 +17,10 @@ name: 'examples'
 on:
   push:
     branches:
-    - 'example'
+    - 'newexample'
   pull_request:
     branches:
-    - 'example'
+    - 'newexample'
 
 jobs:
   deploy:
