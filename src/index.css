@@ -1,0 +1,83 @@
+/* MainContainer.js */
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+/*.logoRotate {*/
+/*  animation: rotation 5s infinite linear;*/
+/*}*/
+
+/*@keyframes rotation {*/
+/*  from {*/
+/*    transform: rotate(0deg);*/
+/*  }*/
+/*  to {*/
+/*    transform: rotate(359deg);*/
+/*  }*/
+/*}*/
+
+/* OrganizationChart.js */
+.node.Full.Time.Employee rect {
+  fill: #fbe9e0 !important;
+}
+
+.field_number_children {
+  font-size: 0 !important;
+}
+
+.edit-wrapper {
+  border-top-left-radius: 15px;
+  max-width: 600px !important;
+}
+
+.edit-photo {
+  background-color: #E0E0F9 !important;
+}
+
+#tree {
+  width: 100%;
+  height: calc(100vh - 108px);
+}
+
+.bg-toolbar-container {
+  bottom: 100px;
+  left: 0;
+  right: initial !important;
+  z-index: 0;
+}
+
+
+.search-enter {
+  opacity: 0.01;
+  transform: scale(1.1);
+}
+
+.search-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 500ms;
+}
+.search-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.search-exit-active {
+  opacity: 0.01;
+  transform: scale(1.1);
+  transition: all 500ms;
+}

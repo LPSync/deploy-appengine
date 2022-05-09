@@ -1,0 +1,94 @@
+#okta-sign-in.auth-container.main-container {
+  background-color: #16173f;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.3);
+  font-family: "Open Sans", sans-serif;
+}
+
+#okta-sign-in.auth-container.main-container {
+  border-color: #16173f;
+}
+
+#okta-sign-in.auth-container .okta-sign-in-header {
+  border-bottom-color: #16173f;
+}
+
+#okta-sign-in * {
+  color: #f4f4f5;
+}
+
+#okta-sign-in .o-form .o-form-input #okta-signin-username {
+  background: #16173f;
+  color: #dddddd;
+  border-color: #f4f4f5;
+  font-family: "Open Sans", sans-serif;
+}
+
+#okta-sign-in .o-form-input-name-username {
+  color: #dddddd;
+}
+
+#okta-sign-in .o-form .o-form-input #okta-signin-password {
+  background: #16173f;
+  color: #dddddd;
+}
+
+#okta-sign-in .o-form-input-name-password {
+  color: #dddddd;
+}
+
+#okta-sign-in.auth-container .o-form-head {
+  color: #f4f4f5;
+}
+
+#okta-sign-in #okta-signin-submit {
+  color: #f4f4f5;
+  font-family: "Open Sans", sans-serif;
+}
+
+#okta-sign-in.auth-container .button-primary {
+  background: #16173f;
+  border: 1px solid #5879da;
+}
+
+#okta-sign-in.auth-container .link-button {
+  background: #16173f;
+  border: 1px solid #f4f4f5;
+  color: #f4f4f5;
+}
+
+#okta-sign-in.auth-container .link-button:hover {
+  background: #2f3060;
+  border: 1px solid #f4f4f5;
+  color: #f4f4f5;
+}
+
+#okta-sign-in.auth-container .button-primary:hover {
+  background: #5879da;
+}
+
+#okta-sign-in.auth-container .button-primary:active {
+  background: #5879da;
+}
+
+#okta-sign-in .o-form-error-container .okta-form-infobox-warning {
+  background: #1d1f52;
+  border-color: #ca2929;
+}
+
+#okta-sign-in .help-wrap .infobox.infobox-warning:before,
+#okta-sign-in .infobox-warning:before,
+#okta-sign-in .infobox.infobox-subtle.infobox-warning:before {
+  background-color: #ca2929;
+}
+
+#okta-sign-in .ajax-form-editor .infobox,
+#okta-sign-in .edit-form .infobox,
+#okta-sign-in .form-content-wrap .infobox,
+#okta-sign-in .m-form .infobox,
+#okta-sign-in .o-form .infobox,
+#okta-sign-in .read-only-form .infobox,
+#okta-sign-in .v-form .infobox {
+  background: #1d1f52;
+  border-color: #ca2929;
+}

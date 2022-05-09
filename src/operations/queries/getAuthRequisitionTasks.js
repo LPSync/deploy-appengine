@@ -1,0 +1,30 @@
+import { gql } from "@apollo/client";
+
+export const GET_AUTH_REQUISITION_TASKS = gql`
+  query GetAuthRequisitionTasks($filters: FiltersInput) {
+    get_auth_requisition_tasks(filters: $filters) {
+      id
+      oldTaskId
+      taskType
+      taskCreatedDateTime
+      taskCreatorUsername
+      taskCreatorFirstName
+      taskCreatorLastName
+      taskStatus
+      taskScheduleType
+      taskScheduleDateTime
+      taskScheduleTimezone
+      taskSendNotification
+      taskEndDate
+      taskApprovalStatus
+      requisitionTask {
+        reqType
+        reqStartDate
+        reqHiringManagerEmail
+        reqJobCode
+        reqJobTitle
+        reqFulfilled
+      }
+    }
+  }
+`;

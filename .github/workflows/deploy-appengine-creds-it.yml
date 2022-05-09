@@ -20,7 +20,7 @@ jobs:
 
     - name: Update app.yaml
       run: |-
-        echo "service: ${{ github.job }}-${{ github.run_number }}" >> ${{ github.workspace }}/example-app/app.yaml
+        echo "service: ${{ github.job }}-${{ github.run_number }}" >> ${{ github.workspace }}/app.yaml
 
     - id: build
       name: Build dist
@@ -34,7 +34,7 @@ jobs:
       with:
         version: gcloud
         promote: false
-        working_directory: ${{ github.workspace }}/example-app/
+        working_directory: ${{ github.workspace }}/
 
     - name: Test Output
       run: |-
@@ -66,7 +66,7 @@ jobs:
 
     - name: Update app.yaml
       run: |-
-        echo "service: ${{ github.job }}-${{ github.run_number }}" >> ${{ github.workspace }}/example-app/app.yaml
+        echo "service: ${{ github.job }}-${{ github.run_number }}" >> ${{ github.workspace }}/app.yaml
 
     - id: build
       name: Build dist
@@ -81,7 +81,7 @@ jobs:
         project_id: ${{ secrets.APPENGINE_DEPLOY_PROJECT_ID }}
         version: gcloud
         promote: false
-        working_directory: ${{ github.workspace }}/example-app/
+        working_directory: ${{ github.workspace }}/
 
     - name: Test Output
       run: |-
@@ -109,7 +109,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Update app.yaml
       run: |-
-        echo "service: ${{ github.job }}-${{ github.run_number }}" >> ${{ github.workspace }}/example-app/app.yaml
+        echo "service: ${{ github.job }}-${{ github.run_number }}" >> ${{ github.workspace }}/app.yaml
 
     - id: build
       name: Build dist
@@ -124,7 +124,7 @@ jobs:
         credentials: ${{ secrets.APPENGINE_DEPLOY_SA_KEY_B64 }}
         version: b64-json
         promote: false # Allows for deletion
-        working_directory: ${{ github.workspace }}/example-app/
+        working_directory: ${{ github.workspace }}/
 
     - name: Test Output
       run: |-
@@ -151,7 +151,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Update app.yaml
       run: |-
-        echo "service: ${{ github.job }}-${{ github.run_number }}" >> ${{ github.workspace }}/example-app/app.yaml
+        echo "service: ${{ github.job }}-${{ github.run_number }}" >> ${{ github.workspace }}/app.yaml
 
     - id: build
       name: Build dist
@@ -166,7 +166,7 @@ jobs:
         credentials: ${{ secrets.APPENGINE_DEPLOY_SA_KEY_JSON }}
         version: json
         promote: false # Allows for deletion
-        working_directory: ${{ github.workspace }}/example-app/
+        working_directory: ${{ github.workspace }}/
 
     - name: Test Output
       run: |-
@@ -199,7 +199,7 @@ jobs:
 
     - name: Update app.yaml
       run: |-
-        echo "service: ${{ github.job }}-${{ github.run_number }}" >> ${{ github.workspace }}/example-app/app.yaml
+        echo "service: ${{ github.job }}-${{ github.run_number }}" >> ${{ github.workspace }}/app.yaml
 
     - uses: 'actions/setup-node@v3'
       with:
@@ -223,7 +223,7 @@ jobs:
       with:
         version: json
         promote: false # Allows for deletion
-        working_directory: ${{ github.workspace }}/example-app/
+        working_directory: ${{ github.workspace }}/
 
     - name: Test Output
       run: |-

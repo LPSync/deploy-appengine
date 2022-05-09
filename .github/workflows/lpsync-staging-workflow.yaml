@@ -1,0 +1,62 @@
+name: 'LPSYNC Staging Workflow'
+
+on:
+  push:
+    branches:
+      - 'staging'
+  pull_request:
+    branches:
+      - 'staging'
+
+jobs:
+  deploy:
+    permissions:
+      actions: 'write'
+      contents: 'read'
+      id-token: 'write'
+      packages: 'read'
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: 'Checkout Repository'
+        uses: 'actions/checkout@v3'
+
+      - name: 'Setup Node Dependencies via Yarn Install'
+        uses: 'actions/setup-node@v3'
+        with:
+          node-version: '14'
+          cache: 'yarn'
+          cache-dependency-path: 'yarn.lock'
+      - run: 'yarn install'
+
+      - name: 'Install React Scripts'
+        uses: 'actions/setup-node@v3'
+        with:
+          node-version: '14'
+          cache: 'npm'
+      - run: "npm install --save react react-dom react-scripts"
+
+      - name: 'clean cache'
+        run: 'npm cache clean --force'
+
+      - run: 'npm ci'
+      - run: 'npm install'
+
+      - name: 'Run React Build'
+        run: 'npm run build'
+        env:
+          CI: 'false'
+
+      - name: 'Deploy to App Engine'
+        uses: 'google-github-actions/auth@v0'
+        with:
+          workload_identity_provider: '${{ secrets.WIF_PROVIDER_NAME }}'
+          service_account: '${{ secrets.APPENGINE_DEPLOY_SA_EMAIL }}'
+      - id: 'deploy'
+        name: 'deploy'
+        uses: 'google-github-actions/deploy-appengine@v0'
+        with:
+          deliverables: 'app.yaml'
+          project_id: '${{ secrets.GCP_PROJECT }}'
+
+      - name: 'show output'
+        run: 'echo ${{ steps.deploy.outputs.url }}'

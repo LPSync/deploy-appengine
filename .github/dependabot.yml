@@ -20,7 +20,7 @@ updates:
           ] # Security updates are unaffected by this setting
 
   - package-ecosystem: "npm"
-    directory: "/example-app"
+    directory: "/"
     commit-message:
       prefix: "chore(deps): "
     schedule:

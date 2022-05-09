@@ -1,0 +1,18 @@
+import {typesWithPrefix} from "../../helper/helpers";
+
+const MultiCandidateRequestActonTypes = {
+  SET_CSV_DATA: "SET_CSV_DATA",
+  SET_CSV_FILE_ERROR: "SET_CSV_FILE_ERROR",
+  SET_SELECTED_TASK_IDS: "SET_SELECTED_TASK_IDS",
+  SET_SELECTED_TASKS: "SET_SELECTED_TASKS",
+  SET_SELECTED_TASK_USERNAME: "SET_SELECTED_TASK_USERNAME",
+  SET_EXISTING_ID: "SET_EXISTING_ID",
+
+  SET_DEFAULT_STATE: "SET_DEFAULT_STATE",
+
+  SET_ACTIVE_STEP: "SET_ACTIVE_STEP",
+};
+
+export default typesWithPrefix("MULTI_CANDIDATE_REQUEST_")(
+  MultiCandidateRequestActonTypes
+);

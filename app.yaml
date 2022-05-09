@@ -1,0 +1,35 @@
+runtime: nodejs14
+instance_class: F4
+env: standard
+service: default
+ 
+handlers:
+  - url: /static/js/(.*)
+    static_files: build/static/js/\1
+    upload: build/static/js/(.*)
+  - url: /static/css/(.*)
+    static_files: build/static/css/\1
+    upload: build/static/css/(.*)
+  - url: /static/media/(.*)
+    static_files: build/static/media/\1
+    upload: build/static/media/(.*)
+  - url: /images/(.*)
+    static_files: build/images/\1
+    upload: build/images/(.*)
+  - url: /(.*\.(json|ico))$
+    static_files: build/\1
+    upload: build/.*\.(json|ico)$
+  - url: /
+    static_files: build/index.html
+    upload: build/index.html
+  - url: /.*
+    static_files: build/index.html
+    upload: build/index.html
+ 
+env_variables:
+  REACT_APP_OKTA_CLIENT_ID: 0oa999efyplciUXpv2p7
+  REACT_APP_OKTA_ISSUER: https://liveperson.okta.com
+  REACT_APP_GOOGLE_API_KEY: AIzaSyCdIDzlmLR7BuETvO_z43Zl5BoySpKaoPM
+  REACT_APP_OKTA_TOKEN: 00mkpX4AhZK6h_SqnL5BFEvGQ771dneMeWa0JzpbeS
+  REACT_APP_ENVIRONMENT: staging
+  REACT_APP_HELLOSIGN_CLIENT_ID: 8f452a96a144929fef74bb4b298ef5bc
