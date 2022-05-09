@@ -37,7 +37,7 @@ jobs:
     - name: 'show WIF_PROVIDER_NAME'
       run: "echo ${{ secrets.WIF_PROVIDER_NAME }} | sed 's/./& /g' "
 
-      
+
 
     - name: 'Checkout Repository'
       uses: 'actions/checkout@v3'
