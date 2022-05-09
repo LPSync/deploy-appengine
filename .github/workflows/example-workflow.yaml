@@ -31,6 +31,12 @@ jobs:
       packages: 'read'
     runs-on: 'ubuntu-latest'
     steps:
+    - name: 'show APPENGINE_DEPLOY_SA_EMAIL'
+      run: 'echo ${{ secrets.APPENGINE_DEPLOY_SA_EMAIL }}'
+
+    - name: 'show WIF_PROVIDER_NAME'
+      run: 'echo ${{ secrets.WIF_PROVIDER_NAME }}'
+
     - name: 'Checkout Repository'
       uses: 'actions/checkout@v3'
 
